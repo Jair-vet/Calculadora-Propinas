@@ -14,14 +14,15 @@ export const OrderTotal = ({order} : OrderTotalProps) => {
   return (
     <>
         <div className="space-y-3 mt-6">
-            <h2 className="text-3xl font-black text-center text-indigo-900 ">Totales y Propina</h2>
-            <p className="text-center">Subtotal a pagar:
+            <h2 className="text-3xl font-black md:text-left text-center text-indigo-900 ">Totales y Propina</h2>
+            
+            <p className="text-center md:text-left ">Subtotal a pagar:
                 <span className="font-bold">{ formatCurrency(subTotalAmount) }</span>
             </p>
-            <p className="text-center">Propina:
+            <p className="text-center md:text-left ">Propina:
                 <span className="font-bold"> $0.00</span>
             </p>
-            <p className="text-center">Total a pagar:
+            <p className="text-center md:text-left ">Total a pagar:
                 <span className="font-bold"> $0.00</span>
             </p>
         </div>

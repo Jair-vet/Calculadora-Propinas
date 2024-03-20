@@ -8,7 +8,7 @@ type OrderContentsProps = {
 
 export const OrderContents = ({order, removeItem} : OrderContentsProps) => {
   return (
-    <div className="mt-10 border border-sky-400 border-dashed p-5 rounded-lg space-y-10">
+    <div>
         <div className="space-y-3">
             {order.length === 0 
                 ? <p className="text-center">La Orden esta Vacia</p> 

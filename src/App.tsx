@@ -3,11 +3,12 @@ import { OrderContents } from "./components/OrderContents";
 import { menuItems } from './data/db';
 import useOrder from "./hooks/useOrder";
 import { OrderTotal } from './components/OrderTotal';
+import { TipPercentageForm } from "./components/TipPercentageForm";
 
 
 function App() {
   
-  const { addItem, order, removeItem } = useOrder()
+  const {  order, tip, setTip, addItem, removeItem, placeOrder } = useOrder()
 
   return (
     <>
@@ -34,15 +35,24 @@ function App() {
         {/* Order Content */}
         <div className="md:mt-0 mt-10">
           <h2 className="text-3xl font-black text-center text-indigo-900 ">Consumo</h2>
-          <OrderContents 
-            order={order}
-            removeItem={removeItem}
-          />
+          
+          <div className="mt-10 border border-sky-400 border-dashed p-5 rounded-lg space-y-10">
+            <OrderContents 
+              order={order}
+              removeItem={removeItem}
+            />
 
-          <OrderTotal 
-            order={order}
-          />
 
+            <TipPercentageForm 
+              setTip={setTip}
+              tip={tip}
+            />
+            
+            <OrderTotal 
+              order={order}
+            />
+          </div>
+  
         </div>
       </main>
 
